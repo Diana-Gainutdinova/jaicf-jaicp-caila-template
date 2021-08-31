@@ -11,7 +11,7 @@ val mainScenario = Scenario {
         }
         action {
             reactions.run {
-                image("https://media.giphy.com/media/ICOgUNjpvO0PC/source.gif")
+//                image("https://media.giphy.com/media/ICOgUNjpvO0PC/source.gif")
                 sayRandom(
                     "Hello! How can I help?",
                     "Hi there! How can I help you?"
@@ -27,6 +27,7 @@ val mainScenario = Scenario {
 
     state("bye") {
         activators {
+            regex("LOL")
             intent("Bye")
         }
 
@@ -54,5 +55,16 @@ val mainScenario = Scenario {
             "Sorry, I didn't get that...",
             "Sorry, could you repeat please?"
         )
+    }
+
+    state("tut") {
+        activators {
+            regex("TUT")
+        }
+        action {
+            reactions.run {
+                image("https://media.giphy.com/media/ICOgUNjpvO0PC/source.gif")
+            }
+        }
     }
 }
